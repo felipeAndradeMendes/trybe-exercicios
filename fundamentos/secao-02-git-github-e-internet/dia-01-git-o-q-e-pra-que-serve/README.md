@@ -1,6 +1,11 @@
-##### Seção 2: Git & GitHub e Internet
+# trybe-exercicios
+## Meu repositório de exercícios
+### [X] 2-1: _GIT- O que é e para que serve?_
 
-- [ ] 2-1: _O que é e para que serve?_
+Hoje você vai aprender o que é controle de versão e o motivo pelo qual ele é essencial para a vida de uma pessoa desenvolvedora!
+
+Você vai poder criar várias versões do seu projeto com a ajuda de um sistema de controle de versão chamado Git, que permite criar inúmeras ramificações (cópias) do seu projeto e acessar cada uma delas sempre que precisar! Prepare-se também para começar a se familiarizar com os termos branch, commit e merge!
+
 
 EXERCÍCIOS
 
