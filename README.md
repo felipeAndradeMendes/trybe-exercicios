@@ -1,7 +1,7 @@
 # trybe-exercicios
-# Meu repositório de exercícios 
+## Meu repositório de exercícios 
+### FUNDAMENTOS :hourglass_flowing_sand: 
 
-# Trybe
 
 Este repositório contém todas as atividades de aprendizagem desenvolvidas por _[Felipe Mendes](LinkDoSeuLinkedinAqui)_ enquanto estudava na [Trybe](https://www.betrybe.com/) :rocket:
 
@@ -13,13 +13,13 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 ##### Seção 1: Introdução - Unix & Shell
 
-- [ ] 1-1: _Unix & Shell- Part 1_
-- [ ] 1-2: _Unix & Shell- Part 2_
+- [X] 1-1: _Unix & Shell- Part 1_
+- [X] 1-2: _Unix & Shell- Part 2_
 
 ##### Seção 2: Git & GitHub e Internet
 
-- [ ] 2-1: _O que é e para que serve?_
-- [ ] 2-2: _Entendendo os comandos_
+- [X] 2-1: _O que é e para que serve?_
+- [X] 2-2: _Entendendo os comandos_
 
 ##### Seção 3: Introdução à HTML & CSS
 
