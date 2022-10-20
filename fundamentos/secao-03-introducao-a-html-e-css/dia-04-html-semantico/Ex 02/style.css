@@ -1,0 +1,41 @@
+body {
+    background-color: rgb(241, 220, 220);
+}
+
+.cabecalho {
+    background-color: antiquewhite;
+    padding: 10px;
+}
+
+.cabecalho h1, .cabecalho h2 {
+    /* background-color: blue; */
+    text-align: center;
+}
+
+td, tr, th, table {
+    border: 1px solid black;
+}
+
+img {
+    max-width: 500px;
+    padding: 5px;
+    background-color: #fff;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.lado-esquerdo {
+    display: inline-block;
+    width: 70%;
+    padding: 8px;
+}
+
+.lado-direito {
+    position: fixed;
+    display: inline-block;
+    width: 29%;
+    height: 60vh;
+    vertical-align: top;
+    padding: 8px;
+    background-color: rgb(207, 192, 192);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
