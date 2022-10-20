@@ -7,6 +7,11 @@ body {
     padding: 10px;
 }
 
+.cabecalho h1, .cabecalho h2 {
+    /* background-color: blue; */
+    text-align: center;
+}
+
 td, tr, th, table {
     border: 1px solid black;
 }
