@@ -99,3 +99,59 @@ switch(pecaLowerCase) {
     default:
         console.log("peça inválida");
 }
+
+//Programa 11
+const notaAluno = -90;
+
+if (notaAluno < 0 || notaAluno > 100) {
+    console.log("ERRO, nota invalida. Insira nota de 0 a 100")
+} else if  (notaAluno >= 90) {
+    console.log("A")
+} else if  (notaAluno >= 80) {
+    console.log("B")
+} else if  (notaAluno >= 70) {
+    console.log("C")
+} else if  (notaAluno >= 60) {
+    console.log("D")
+} else if  (notaAluno >= 50) {
+    console.log("E")
+} else if  (notaAluno < 50) {
+    console.log("F")
+} 
+
+//Programa 12
+const numero1 = 121;
+const numero2 = 13;
+const numero3 = 117;
+
+if (numero1 % 2 === 0 || numero2 % 2 === 0 | numero3 % 2 === 0) {
+    console.log(true);
+} else {
+    console.log(false);
+}
+
+//Programa 13
+const numero4 = 122;
+const numero5 = 14;
+const numero6 = 118;
+
+if (numero4 % 2 !== 0 || numero5 % 2 !== 0 | numero6 % 2 !== 0) {
+    console.log(true);
+} else {
+    console.log(false);
+}
+
+//Programa 14
+const custoProduto = -15;
+const valorVenda = 30;
+
+let custoTotal = custoProduto + (custoProduto * 0.2);
+const lucro = valorVenda - custoTotal;
+
+if (custoProduto < 0 || valorVenda < 0) {
+    console.log("ERRO! Valor inválido. Encerrando programa")
+} else {
+    console.log("Lucro =", lucro)
+}
+
+
