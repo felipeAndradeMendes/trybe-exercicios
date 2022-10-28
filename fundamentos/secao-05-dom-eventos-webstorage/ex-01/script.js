@@ -56,3 +56,13 @@ modificaTamanhoP();
 
 
 
+// 6. Crie e execute uma função que exiba o conteúdo de todas as tags <p> no console.
+
+const exibePs = () => {
+    const tagP = document.getElementsByTagName('p');
+
+    for (let i = 0; i < tagP.length; i += 1) {
+        console.log(tagP[i].innerHTML);
+    }
+}
+exibePs();
