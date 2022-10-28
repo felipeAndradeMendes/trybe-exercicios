@@ -44,3 +44,15 @@ const textoTagH1 = () => {
 textoTagH1();
 
 
+
+// 5. Crie e execute uma função que modifique o texto da primeira tag <p> para maiúsculo.
+
+const modificaTamanhoP = () => {
+    const tagP = document.getElementsByTagName('p');
+    
+    return tagP[0].style.textTransform = 'uppercase';
+}
+modificaTamanhoP();
+
+
+
