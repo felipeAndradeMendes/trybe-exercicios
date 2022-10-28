@@ -3,13 +3,20 @@
 const mudaTextoParagrafo = () => {
     const paragrafo = document.getElementsByTagName('p');
 
-    texto = 'Daqui a odia anome imagino trabalhando na área muito feliz.'
+    texto = 'Daqui a dois anos me imagino trabalhando na área muito feliz.'
     return paragrafo[1].innerText = texto;
 }
 
 // console.log(mudaTextoParagrafo());
-// mudaTextoParagrafo()
+mudaTextoParagrafo()
 
 
 // 2. Crie e execute uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)).
 
+const mudaCorMain = () => {
+    const mainCor = document.getElementsByClassName('main-content');
+    // console.log(mainCor);
+
+    mainCor[0].style.backgroundColor = 'rgb(76,164,109)';
+} 
+mudaCorMain();
