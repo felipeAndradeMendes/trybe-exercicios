@@ -35,3 +35,12 @@ mudaCorQuadrado()
 
 
 // 4. Crie e execute uma função que corrija o texto da tag <h1>.
+
+const textoTagH1 = () => {
+    const tagH1 = document.getElementsByTagName('h1');
+    // console.log(tagH1);
+    return tagH1[0].innerText = 'Exercício - JavaScript';
+}
+textoTagH1();
+
+
