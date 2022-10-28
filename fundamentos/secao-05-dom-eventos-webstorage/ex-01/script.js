@@ -61,8 +61,12 @@ modificaTamanhoP();
 const exibePs = () => {
     const tagP = document.getElementsByTagName('p');
 
-    for (let i = 0; i < tagP.length; i += 1) {
+    // for (let i = 0; i < tagP.length; i += 1) {
+    //     console.log(tagP[i].innerHTML);
+    // }
+    for (let i in tagP) {
         console.log(tagP[i].innerHTML);
     }
+
 }
 exibePs();
