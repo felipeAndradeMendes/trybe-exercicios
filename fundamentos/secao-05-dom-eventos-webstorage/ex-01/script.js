@@ -17,6 +17,21 @@ const mudaCorMain = () => {
     const mainCor = document.getElementsByClassName('main-content');
     // console.log(mainCor);
 
-    mainCor[0].style.backgroundColor = 'rgb(76,164,109)';
+    return mainCor[0].style.backgroundColor = 'rgb(76,164,109)';
 } 
 mudaCorMain();
+
+
+
+// 3. Crie e execute uma função que mude a cor do quadrado vermelho para branco.
+
+const mudaCorQuadrado = () => {
+    const quadrado = document.getElementsByClassName('center-content');
+    // console.log(quadrado);
+    return quadrado[0].style.backgroundColor = 'blue';
+}
+
+mudaCorQuadrado()
+
+
+// 4. Crie e execute uma função que corrija o texto da tag <h1>.
