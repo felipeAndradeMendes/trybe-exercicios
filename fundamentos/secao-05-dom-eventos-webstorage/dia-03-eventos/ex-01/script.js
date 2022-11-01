@@ -115,3 +115,14 @@ daysMonth.addEventListener('click', changeHolidayColor);
 // Adicione a esse botão o ID "btn-friday";
 // Adicione esse botão como filho/filha da tag <div> com classe "buttons-container".
 
+const createButtonFriday = (element) => {
+    const btnContainer = document.getElementsByClassName('buttons-container')[0];
+    const btnFriday = document.createElement('button');
+
+    let btnName = element;
+    btnFriday.id = 'btn-friday';
+    btnFriday.innerHTML = element;
+
+    btnContainer.appendChild(btnFriday);
+}
+createButtonFriday('Sexta-feira')
