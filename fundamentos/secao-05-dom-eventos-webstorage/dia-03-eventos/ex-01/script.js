@@ -1,4 +1,4 @@
-// 01- PARTE 01 
+// PARTE 01 
 // Crie um calendário dinamicamente.
 
 // O array decemberDaysList contém os dois últimos dias de novembro e os dias do mês de dezembro. Sua função deve criar dinamicamente cada dia do calendário e os adicionar dentro da tag <ul>.
@@ -63,8 +63,22 @@ const createDaysOfTheWeek = () => {
  
 
 
-  // 02- PARTE 02
+  // PARTE 02
 // Implemente uma função que crie dinamicamente um botão com o nome “Feriados”;
 // Sua função deve receber um parâmetro com a string 'Feriados';
 // Adicione a este botão a ID "btn-holiday";
 // Adicione este botão como filho/filha da tag <div> com classe "buttons-container".
+
+const buttonContainer = document.querySelector('.buttons-container');
+
+const createButtonHoliday = (btnName) => {
+    let button = document.createElement('button');
+    button.innerHTML = btnName;
+    button.id = 'btn-holiday';
+    buttonContainer.appendChild(button) ;
+}
+createButtonHoliday('Feriados');
+
+
+
+// 
