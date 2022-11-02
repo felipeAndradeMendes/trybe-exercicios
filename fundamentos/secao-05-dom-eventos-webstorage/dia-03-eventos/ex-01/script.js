@@ -164,7 +164,7 @@ btnFriday.addEventListener('click', changeFriday);
 
 const zoomDays = () => {
     const days = document.querySelectorAll('.day');
-    console.log(days);
+    // console.log(days);
     for (let i = 0; i < days.length; i += 1) {
         days[i].addEventListener('mouseover', (event) => {
             event.target.style.fontSize = '2em';
@@ -178,3 +178,31 @@ const zoomDays = () => {
 }
 zoomDays()
 
+
+
+// PARTE 07
+
+// Implemente uma função que adicione uma tarefa personalizada ao calendário;
+// A função deve receber como parâmetro a string com o nome da tarefa (ex: “cozinhar”) e criar dinamicamente um elemento com a tag <span> contendo a tarefa;
+// O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks"
+
+const createTask = (value) => {
+    const myTasks = document.querySelector('.my-tasks');
+    const newTask = document.createElement('span');
+
+    // console.log(myTasks);
+    // console.log(newTask);
+    newTask.innerHTML = value;
+    myTasks.appendChild(newTask);
+}
+
+createTask('Cozinhar');
+
+
+
+// PARTE 08
+
+// Implemente uma função que adicione uma legenda com cor para a tarefa;
+// Essa função deverá receber como parâmetro uma string (‘cor’) e criar dinamicamente um elemento de tag <div> com a classe task;
+// O parâmetro cor deverá ser utilizado como cor de fundo da <div> criada;
+// O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks".
