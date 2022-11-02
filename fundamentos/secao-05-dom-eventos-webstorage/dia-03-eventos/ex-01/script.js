@@ -167,7 +167,7 @@ const zoomDays = () => {
     // console.log(days);
     for (let i = 0; i < days.length; i += 1) {
         days[i].addEventListener('mouseover', (event) => {
-            event.target.style.fontSize = '2em';
+            event.target.style.fontSize = '4em';
             // console.log(event.target);
         })
 
@@ -216,7 +216,7 @@ const createColorDiv = (value) => {
 
     myTasks.appendChild(colorDiv);
 }
-createColorDiv('pink');
+createColorDiv('red');
 
 
 
@@ -227,27 +227,55 @@ createColorDiv('pink');
 // Ao clicar novamente no elemento, a sua classe deverá voltar a ser somente task, ou seja, essa tarefa está deixando de ser uma tarefa selecionada.
 
 const selectDiv = () => {
-    const divTags = document.querySelector('.task');
+    const divTags = document.querySelectorAll('.task');
     const taskSelected = document.querySelectorAll('.task.selected');
 
-    divTags.addEventListener('click', (event) => {
+    for (let i=0; i<divTags.length; i += 1) {
+        divTags[i].addEventListener('click', (event) => {
 
-        if (event.target.className === 'task') {
-            event.target.classList.add('selected');
-        } else {
-            event.target.classList.remove('selected');
-        }
-        // gabarito usou getElementById e length na condicional;
-        // como nao funcionou com query, usei outra condicional;
-    })
+            if (event.target.className === 'task') {
+                event.target.classList.add('selected');
+            } else {
+                event.target.classList.remove('selected');
+            }
+            // gabarito usou getElementById e length na condicional;
+            // como nao funcionou com query, usei outra condicional;
+            changeDayColor()
+        })
+    } 
+   
 
 }
 selectDiv();
 
 
 
+// PARTE 10
 
+// Implemente uma função que atribua a cor da tarefa ao dia do calendário;
+// Adicione um evento que, ao clicar em um dia do mês no calendário, atribua a esse dia a cor da legenda da sua tarefa selecionada;
+// Ao clicar novamente no dia com a cor da legenda, a sua cor deverá voltar à configuração inicial rgb(119,119,119).
 
+const changeDayColor = () => {
+    const days = document.querySelectorAll('.day');
+    let div = document.querySelector('.selected');
+    // só funcionou quando usei query sem All
+    let divColor = div.style.backgroundColor;
+    // console.log(div[0].style.backgroundColor);
+
+    for (let i = 0; i < days.length; i += 1) {
+        let originalColor = 'rgb(119,119,119)';
+        
+        days[i].addEventListener('click', (event) => {
+            if (event.target.style.color !== divColor) {
+            event.target.style.color = divColor;
+            } else {
+            event.target.style.color = originalColor;
+            }
+        })
+    }
+}
+changeDayColor();
 
 
 
