@@ -260,13 +260,15 @@ const changeDayColor = () => {
     const days = document.querySelectorAll('.day');
     let div = document.querySelector('.selected');
     // só funcionou quando usei query sem All
-    let divColor = div.style.backgroundColor;
+    // let divColor = div.style.backgroundColor;
     // console.log(div[0].style.backgroundColor);
 
     for (let i = 0; i < days.length; i += 1) {
         let originalColor = 'rgb(119,119,119)';
         
         days[i].addEventListener('click', (event) => {
+            const divColor = div.style.backgroundColor;
+
             if (event.target.style.color !== divColor) {
             event.target.style.color = divColor;
             } else {
@@ -279,6 +281,24 @@ changeDayColor();
 
 
 
+// BONUS
 
+// Vamos adicionar compromissos ao seu calendário? Implemente uma função que, ao digitar um compromisso na caixa de texto “COMPROMISSOS”, adiciona o item à lista “MEUS COMPROMISSOS” ao clicar no botão “ADICIONAR”;
+// Se nenhum caractere for inserido no campo input, a função deve retornar um alert com uma mensagem de erro ao clicar em “ADICIONAR”;
+// Ao pressionar a tecla “enter” o evento também deverá ser disparado.
+// De olho na dica 👀: Você pode utilizar a propriedade key.
 
+const addInput = () => {
+    const input = document.querySelector('#task-input');
+    const btnInput = document.querySelector('#btn-add');
 
+    btnInput.addEventListener('click', () => {
+        console.log(input.vallue);
+        console.log('bunda velha')
+    })
+}
+console.log('rabera')
+addInput();
+
+// corrigir erro que aparece no console a respeito do style.
+// quando não tem a classe selcted, aprece o erro, pois se refere a um elemento nao existente
