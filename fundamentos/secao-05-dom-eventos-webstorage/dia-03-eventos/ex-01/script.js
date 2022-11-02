@@ -290,15 +290,30 @@ changeDayColor();
 
 const addInput = () => {
     const input = document.querySelector('#task-input');
-    const btnInput = document.querySelector('#btn-add');
+    const btnAdicionar = document.querySelector('#btn-add');
+    const inputField = document.querySelector('#task-input');
 
-    btnInput.addEventListener('click', () => {
-        console.log(input.vallue);
-        console.log('bunda velha')
-    })
+    const addTask = () => {
+        if (input.value.length === 0) {
+            alert('campo vazio');
+        } else {
+            createTask(input.value);
+            selectDiv();
+            createColorDiv();
+        }        
+        inputField.value = '';
+    }
+
+    inputField.addEventListener('keypress', (el) => {
+        if (el.key ==='Enter') {
+            addTask();
+        }
+    });
+    btnAdicionar.addEventListener('click', addTask);
 }
-console.log('rabera')
+// console.log('rabera')
 addInput();
+
 
 // corrigir erro que aparece no console a respeito do style.
 // quando não tem a classe selcted, aprece o erro, pois se refere a um elemento nao existente
