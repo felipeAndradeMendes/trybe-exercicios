@@ -220,3 +220,37 @@ createColorDiv('pink');
 
 
 
+// PARTE 09
+
+// Implemente uma função que selecione uma tarefa;
+// Adicione um evento que ao clicar no elemento com a tag <div> referente à cor da sua tarefa, atribua a esse elemento a classe task selected, ou seja, quando sua tarefa possuir a classe task selected ela estará selecionada;
+// Ao clicar novamente no elemento, a sua classe deverá voltar a ser somente task, ou seja, essa tarefa está deixando de ser uma tarefa selecionada.
+
+const selectDiv = () => {
+    const divTags = document.querySelector('.task');
+    const taskSelected = document.querySelectorAll('.task.selected');
+
+    divTags.addEventListener('click', (event) => {
+
+        if (event.target.className === 'task') {
+            event.target.classList.add('selected');
+        } else {
+            event.target.classList.remove('selected');
+        }
+        // gabarito usou getElementById e length na condicional;
+        // como nao funcionou com query, usei outra condicional;
+    })
+
+}
+selectDiv();
+
+
+
+
+
+
+
+
+
+
+
