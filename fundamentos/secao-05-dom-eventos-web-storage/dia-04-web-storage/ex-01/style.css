@@ -1,3 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header {
+    display: flex;
+    justify-content:space-evenly;
+    vertical-align: middle;
+    border: 1px solid green;
+    align-items: center;
+}
+.preferencia {
+    display: inline-block;
+    padding:10px;
+    width: fit-content;
+    /* border: 1px solid red; */
+    height: fit-content;
+    margin: 2rem;
+}
+button {
+    display: block;
+    /* padding: 5px; */
+    width: 100%;
+    margin: 10px 0;
+}
 #content {
     background-color: white;
+    margin: 2rem;
+    text-align: center;
+}
+
+#content h1, #content h3, #content p {
+    padding: 2em;
 }
