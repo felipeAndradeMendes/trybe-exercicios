@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Trybe Trip</title>
+</head>
+<body>
+  <header>
+    <h1 class="insetshadow">Tribe Trip</h1>
+  </header>
+
+  <main>
+    <section>
+      <form action="">
+        <fieldset id="field-main" value="testando"> 
+          <fieldset id="field-infos">
+            <legend>Infos pessoais</legend>
+              <label for="input-name">Nome:
+                <input type="text" id="input-name" name="nome" minlength="10" maxlength="40" autofocus required>
+              </label>
+            <br>
+              <label for="">Email:
+                <input type="email" id="input-email" name="email" minlength="10" maxlength="50" required>
+              </label>        
+          <br>
+            <label for="destino-1">
+              <input type="radio" id="destino-1" name="destino" checked>Cidade
+            </label>
+            <label for="destino-2">
+              <input type="radio" id="destino-2" name="destino">Campo
+            </label>  
+            <label for="destino-3">
+              <input type="radio" id="destino-3" name="destino">Praia
+            </label>
+            <label for="destino-4">
+              <input type="radio" id="destino-4" name="destino">Montanhas
+            </label>
+          <br>
+            <p>Espaço para digitar a resposta:</p>
+              <textarea name="texto-sobre-mim" id="input-sobre-mim" cols="30" rows="10" placeholder="Escreva aqui" maxlength="500" required></textarea>
+              <p id="char-count"></p>
+          </fieldset>
+          
+          <br>
+          <fieldset id="field-data">
+            <legend>Data</legend>
+            <p>Qual a melhor data para realizar sua viagem?</p>
+            <label for="">
+              <input type="date" value="" id="data-input" name="data" required>
+            </label>
+          </fieldset>
+
+          <br>
+          <fieldset id="field-check">            
+            <input type="checkbox" id="oportunidades" name="check-oportunidades">
+              <label for="oportunidades">Gostaria de receber outras incríveis oportunidades oferecidas pelaTrybe</label>              
+              
+            <br>
+              
+            <input type="checkbox" id="permissoao-imagens" name="check-imagens" value="Olar">
+              <label for="permissoao-imagens">Concordo que imagens das minhas ferias poderão ser usadas na divulgação de concursos futuros</label>              
+                           
+          </fieldset>
+          <section id="btns">
+            <input type="submit" id="btn-enviar" name="btn-enviar" value="Enviar">
+            <button type="reset" id="btn-apagar">Apagar tudo</button>
+          </section>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+
+
+  <script src="./script.js"></script>
+</body>
+</html>
