@@ -37,6 +37,11 @@ header {
   text-align: center;
 }
 
+#char-count {
+  margin: 0 3em;
+  padding-top: 0;  
+}
+
 /* TEXT SHADOWS */
 
   .elegantshadow {

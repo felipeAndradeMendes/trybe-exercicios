@@ -3,6 +3,7 @@ const inputEmail = document.querySelector('#input-email');
 const btnSubmit = document.querySelector('#btn-enviar');
 const btnApagar = document.querySelector('#btn-apagar');
 const checkBoxImages = document.querySelector('#permissoao-imagens');
+const textArea = document.querySelector('#input-sobre-mim');
 
 const isCheckboxChecked = () => {
   return checkBoxImages.checked;  
@@ -37,3 +38,15 @@ btnApagar.addEventListener('click', (event) => {
     event.preventDefault();
   }
 })
+
+const countChars = () => {
+  const pCharCount = document.querySelector('#char-count');
+  let count = textArea.value.length;
+  let countBack = 500 - count;
+  if (countBack === 0) {
+    pCharCount.innerHTML = 'Limite de caracteres alcançado'
+  } else {
+    pCharCount.innerHTML = `${countBack} caracteres restantes`;
+  }
+}
+textArea.addEventListener('keyup', countChars);
