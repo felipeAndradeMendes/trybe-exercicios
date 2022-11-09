@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <title>Trybe Trip</title>
+</head>
+<body>
+  <header>
+    <h1 class="insetshadow">Tribe Trip</h1>
+  </header>
+
+  <main>
+    <section>
+      <form action="">
+        <fieldset id="field-main" value="testando"> 
+          <fieldset id="field-infos">
+            <legend>Infos pessoais</legend>
+            <section class="input-group mb-3">
+              <span class="input-group-text">Nome:</span>
+              <input class="form-control" type="text" id="input-name" name="nome" minlength="10" maxlength="40" autofocus required>
+            </section>  
+            <section class="input-group mb-3">
+              <span class="input-group-text">Email:</span>  
+              <input class="form-control" type="email" id="input-email" name="email" minlength="10" maxlength="50" required>
+              <span class="input-group-text">@example.com</span>
+            </section>
+            <section>
+              <label class="form-check-label" for="destino-1"></label>
+              <input class="form-check-input" type="radio" role="switch" id="destino-1" name="destino" checked> Cidade            
+              <label for="destino-2"></label>
+              <input type="radio" id="destino-2" name="destino"> Campo
+              <label for="destino-3"></label>
+              <input type="radio" id="destino-3" name="destino"> Praia              
+              <label for="destino-4"></label>
+              <input type="radio" id="destino-4" name="destino"> Montanhas              
+            </section>          
+            <p>Espaço para digitar a resposta:</p>
+              <textarea name="texto-sobre-mim" id="input-sobre-mim" cols="30" rows="10" placeholder="Escreva aqui" maxlength="500" required></textarea>
+              <p id="char-count"></p>
+          </fieldset>          
+          
+          <fieldset id="field-data">
+            <legend>Data</legend>
+            <p>Qual a melhor data para realizar sua viagem?</p>
+            <label for=""></label>
+            <input type="date" value="" id="data-input" name="data" required>            
+          </fieldset>
+                    
+          <fieldset id="field-check"> 
+            <legend>Acordos</legend>           
+            <input class="btn-check" type="checkbox" id="oportunidades" name="check-oportunidades">
+            <label class="btn btn-outline-success" for="oportunidades">Gostaria de receber outras incríveis oportunidades oferecidas pelaTrybe</label>   
+            
+              
+            <input class="btn-check" type="checkbox" id="permissoao-imagens" name="check-imagens" value="">
+              <label class="btn btn-outline-danger" for="permissoao-imagens">Concordo que imagens das minhas ferias poderão ser usadas na divulgação de concursos futuros</label>              
+                           
+          </fieldset>
+          <section id="btns">
+            <input type="submit" id="btn-enviar" name="btn-enviar" value="Enviar">
+            <button type="reset" id="btn-apagar">Apagar tudo</button>
+          </section>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+
+
+  <script src="./script.js"></script>
+</body>
+</html>
