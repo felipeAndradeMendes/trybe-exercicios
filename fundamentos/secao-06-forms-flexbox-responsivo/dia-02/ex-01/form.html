@@ -5,25 +5,28 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./style.css">
   <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  <title>Trybe Trip</title>
+  <title>Trybe Trip</title>  
 </head>
-<body>
-  <header>
+
+<body class="mx-3 mt-1">
+  <header class="d-flex justify-content-center">
     <h1 class="insetshadow">Tribe Trip</h1>
   </header>
 
   <main>
     <section>
-      <form action="">
-        <fieldset id="field-main" value="testando"> 
-          <fieldset id="field-infos">
-            <legend>Infos pessoais</legend>
+      <form id="section-main" action="">
+        <fieldset class="form-group border p-3 mb-5" id="field-main" value="testando"> 
+          <legend class="w-auto px-3 nofloat">FORMULARIO</legend>
+          <fieldset class="form-group border p-3" id="field-infos">
+            <legend class="w-auto px-3 nofloat">Infos pessoais</legend>
             <section class="input-group mb-3">
               <span class="input-group-text">Nome:</span>
               <input class="form-control" type="text" id="input-name" name="nome" minlength="10" maxlength="40" autofocus required>
             </section>  
-            <section class="input-group mb-3">
+            <section class="input-group mb-5">
               <span class="input-group-text">Email:</span>  
               <input class="form-control" type="email" id="input-email" name="email" minlength="10" maxlength="50" required>
               <span class="input-group-text">@example.com</span>
@@ -39,30 +42,31 @@
               <input type="radio" id="destino-4" name="destino"> Montanhas              
             </section>          
             <p>Espaço para digitar a resposta:</p>
-              <textarea name="texto-sobre-mim" id="input-sobre-mim" cols="30" rows="10" placeholder="Escreva aqui" maxlength="500" required></textarea>
+            <section class="form-floating">
+              <textarea class="form-control h-25" rows="10" name="texto-sobre-mim" id="input-sobre-mim" placeholder="Escreva aqui" maxlength="500" required></textarea>
+              <label class="" for="input-sobre-mim">Pq devo ganhar</label>
               <p id="char-count"></p>
+            </section>
           </fieldset>          
           
-          <fieldset id="field-data">
-            <legend>Data</legend>
+          <fieldset class="form-group border p-3 my-4" id="field-data">
+            <legend class="w-auto px-3 nofloat">Data</legend>
             <p>Qual a melhor data para realizar sua viagem?</p>
             <label for=""></label>
             <input type="date" value="" id="data-input" name="data" required>            
           </fieldset>
                     
-          <fieldset id="field-check"> 
-            <legend>Acordos</legend>           
+          <fieldset class="d-flex justify-content-center flex-column p-3" id="field-check"> 
+            <legend class="text-center">Acordos</legend>           
             <input class="btn-check" type="checkbox" id="oportunidades" name="check-oportunidades">
-            <label class="btn btn-outline-success" for="oportunidades">Gostaria de receber outras incríveis oportunidades oferecidas pelaTrybe</label>   
-            
+            <label class="btn btn-outline-success" for="oportunidades">Gostaria de receber outras incríveis oportunidades oferecidas pelaTrybe</label>
               
             <input class="btn-check" type="checkbox" id="permissoao-imagens" name="check-imagens" value="">
-              <label class="btn btn-outline-danger" for="permissoao-imagens">Concordo que imagens das minhas ferias poderão ser usadas na divulgação de concursos futuros</label>              
-                           
+              <label class="btn btn-outline-danger" for="permissoao-imagens">Concordo que imagens das minhas ferias poderão ser usadas na divulgação de concursos futuros</label>                                        
           </fieldset>
-          <section id="btns">
-            <input type="submit" id="btn-enviar" name="btn-enviar" value="Enviar">
-            <button type="reset" id="btn-apagar">Apagar tudo</button>
+
+            <input class="btn btn-success m-3" type="submit" id="btn-enviar" name="btn-enviar" value="Enviar">
+            <button class="btn btn-danger m-3" type="reset" id="btn-apagar">Apagar tudo</button>
           </section>
         </fieldset>
       </form>
