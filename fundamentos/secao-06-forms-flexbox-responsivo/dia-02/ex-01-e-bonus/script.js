@@ -52,3 +52,39 @@ const countChars = () => {
 textArea.addEventListener('keyup', countChars);
 
 // TENTAR IMPLEMENTAR BOTÃO DE VISUALIZAR SENHA
+
+// PIKADAY
+
+// let picker = new Pikaday({ field: document.getElementById('datepicker') });
+
+
+
+
+// let field = document.getElementById('datepicker');
+// let picker = new Pikaday({
+//     onSelect: function(date) {
+//         field.value = picker.toString();
+//     }
+// });
+// field.parentNode.insertBefore(picker.el, field.nextSibling);
+
+// toString(date, format = 'DD-YYYY-MM')
+
+// new Pikaday({
+//   field: document.getElementById('eDate'), 
+//   toString: function(date) {
+//       var parts = [('0'+date.getDate()).slice(-2), ('0'+(date.getMonth()+1)).slice(-2), date.getFullYear()];
+//       return parts.join("-");
+//   }
+// })
+
+let field = document.getElementById('datepicker');
+let picker = new Pikaday({
+    onSelect: function(date) {
+      var parts = [('0'+date.getDate()).slice(-2), ('0'+(date.getMonth()+1)).slice(-2), date.getFullYear()];
+      // console.log(parts.join("-"))
+      return field.value = parts.join("-")
+    }
+  });
+  // field.value = picker;
+  field.parentNode.insertBefore(picker.el, field.nextSibling);

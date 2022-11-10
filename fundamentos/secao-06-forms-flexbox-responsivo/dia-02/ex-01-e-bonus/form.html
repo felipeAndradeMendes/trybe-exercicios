@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="./style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
   <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <title>Trybe Trip</title>  
 </head>
@@ -52,8 +53,10 @@
           <fieldset class="form-group border p-3 my-4" id="field-data">
             <legend class="w-auto px-3 nofloat">Data</legend>
             <p>Qual a melhor data para realizar sua viagem?</p>
-            <label for=""></label>
-            <input type="date" value="" id="data-input" name="data" required>            
+            <label for="datepicker"></label>
+            <!-- <input type="date" value="" id="data-input" name="data" required>  -->
+            <input type="text" id="datepicker" name="data" required>            
+
           </fieldset>
                     
           <fieldset class="d-flex justify-content-center flex-column p-3" id="field-check"> 
@@ -74,6 +77,9 @@
   </main>
 
 
+  <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
   <script src="./script.js"></script>
+  <script src="pikaday.js"></script>
+
 </body>
 </html>
