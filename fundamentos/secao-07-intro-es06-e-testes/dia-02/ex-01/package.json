@@ -1,0 +1,15 @@
+{
+  "name": "ex-01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ex-01.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
+}
