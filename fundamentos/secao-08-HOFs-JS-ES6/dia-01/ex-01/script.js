@@ -20,5 +20,4 @@ const newEmployees = (employeeGenerator) => {
   return employees;
 };
 
-
 console.log(newEmployees(employeeGenerator));
