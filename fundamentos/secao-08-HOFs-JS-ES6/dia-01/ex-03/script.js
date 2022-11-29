@@ -20,7 +20,6 @@ const answerAnalyser = (template, answers) => {
   answers.forEach((element, index) => {
     if (element === template[index]) {totalPoints += 1}
     if (element !== template[index] && element !== 'N.A') {totalPoints -= 0.5}
-    // console.log(totalPoints);
   });
 
   return totalPoints
@@ -33,5 +32,4 @@ const exameCorrector = (template, answers, callback) => {
 const RIGHT_ANSWERS = ['A', 'C', 'B', 'D', 'A', 'A', 'D', 'A', 'D', 'C'];
 const STUDENT_ANSWERS = ['A', 'N.A', 'B', 'D', 'A', 'C', 'N.A', 'A', 'D', 'B'];
 
-// console.log(answerAnalyser(RIGHT_ANSWERS, STUDENT_ANSWERS))
 console.log(exameCorrector(RIGHT_ANSWERS, STUDENT_ANSWERS, answerAnalyser))
