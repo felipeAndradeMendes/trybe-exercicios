@@ -65,11 +65,14 @@ const books = [
 
 const expectedResult = false;
 function authorUnique() {
-  const searchAge = books.some(element => {
-    console.log(element.author.birthYear);
-    if (books.indexOf(element.author.birthYear !== books.lastIndexOf(element.author.birthYear)));
+  const ageArr = [];
+  books.forEach(book => {
+    ageArr.push(book.author.birthYear);
   });
-  return searchAge;
+
+  const testArr = ageArr.some((age) => ageArr.indexOf(age) !== ageArr.lastIndexOf(age));
+
+  return !testArr;
 }
 // ESTÁ ERRADO!!!!?????///// CORRIGIR
 
