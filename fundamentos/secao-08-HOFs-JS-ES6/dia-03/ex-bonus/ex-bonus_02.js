@@ -66,10 +66,12 @@ const books = [
 // const expectedResult = "George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.";
 
 const reduceNames = () => {
-  const res = books.reduce((acc, cur) => {
-    return acc + `${cur.author.name}, `
+  const res = books.reduce((acc, cur, index) => {
+    return acc + (index === books.length - 1 ? `${cur.author.name}.` : `${cur.author.name}, `);
   }, '')
   return res;
 };
 
 console.log(reduceNames());
+
+// Após ver o gabarito, adicionei condição para que o ultimo elemento acabe com ponto final, não virgula;
