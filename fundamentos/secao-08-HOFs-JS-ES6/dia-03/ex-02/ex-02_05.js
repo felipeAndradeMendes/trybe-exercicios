@@ -10,12 +10,15 @@ const expectedResult = [
  { name: 'Miguel', average: 9.2 },
  { name: 'Maria Clara', average: 8.8 },
 ];
-
+ 
 const studentAverage = () => {
-  const gradesAverage = grades.map((gradeGroup) => gradeGroup.reduce((acc, cur) => {
-    return acc + cur;
-  }, 0) / gradeGroup.length);
+  // .map() para percorrer o arr de notas e reduce para, em cada um, percorrer os valores de dentro e somar. Além disso, no final do reduce, dividir pelo length de cada array de notas, para ter a media.
+  const gradesAverage = grades.map((gradeGroup) => gradeGroup
+    .reduce((acc, cur) => { return acc + cur;
+    }, 0) / gradeGroup.length);
 
+  // Mais um map para percorre o aray students e criar um objeto pra cada aluno, adicionando o nome e o retorno da variavel de media anterior.
+  // *** Atenção ao objeto entre parenteses dentro da função, para o js não achar que são chaves de escopo da função;  
   const gradeObj = students.map((student, index) => {
     const obj = ({
       'name': student,
