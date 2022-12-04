@@ -20,7 +20,6 @@ const dragon = {
 
 const battleMembers = { mage, warrior, dragon };
 
-
 // Crie uma função que retorne o dano do dragão.
 
 // O dano será um número aleatório entre 15 (dano mínimo) e o valor do atributo strength (dano máximo).
@@ -56,7 +55,7 @@ const warriorDamage = () => {
 
 // **** DUVIDA SOBRE COMO MUDAR O VALOR DE MANA DO MAGE PARA IR ATUALIZANDO A CADA TURNO ***** //
 
-const manaDamageMage = () => {
+const mageDamage = () => {
   // damage
   const minDamage = mage.intelligence;
   const maxDamage = minDamage * 2;
@@ -73,7 +72,49 @@ const manaDamageMage = () => {
 
   return mageObj;
 };
-console.log('Dano função mago', manaDamageMage());
+// console.log('Dano função mago', mageDamage());
+// console.log(mageDamage().dano);
 
 
 
+// Parte II
+// Agora que você já possui a implementação das funções relativas aos três exercícios anteriores, passe-as como parâmetro para outras funções que irão compor um objeto gameActions. O objeto será composto por ações do jogo, e cada ação é por definição uma HOF, pois, nesse caso, são funções que recebem como parâmetro outra função.
+
+// Crie a primeira HOF que compõe o objeto gameActions.
+// Ela será a função que simula o turno do personagem warrior. Essa HOF receberá como parâmetro a função que calcula o dano deferido pelo personagem warrior e atualizará os healthPoints do monstro dragon. Além disso, ela também deve atualizar o valor da chave damage do warrior.
+
+// Crie a segunda HOF que compõe o objeto gameActions.
+// Ela será a função que simula o turno do personagem mage. Essa HOF receberá como parâmetro a função que calcula o dano deferido pelo personagem mage e atualizará os healthPoints do monstro dragon. Além disso, ela também deve atualizar o valor das chaves damagee mana do mage.
+
+// Crie a terceira HOF que compõe o objeto gameActions.
+// Ela será a função que simula o turno do monstro dragon. Essa HOF receberá como parâmetro a função que calcula o dano deferido pelo monstro dragon e atualizará os healthPoints dos personagens mage e warrior. Além disso, ela também deve atualizar o valor da chave damage do monstro.
+
+
+
+const gameActions = {
+  warriorTurn: (warriorDamage) => {
+    const warriorDmg = warriorDamage();
+    warrior.damage = warriorDmg;
+    dragon.healthPoints -= warriorDmg;
+  },
+  mageTurn: (mageDamage) => {
+    const mageStatus= mageDamage();
+    const mageDmg = mageStatus.dano;
+    mage.damage = mageDmg;
+    mage.mana -= mageStatus.manaSpent;
+    dragon.healthPoints -= mageDmg;
+  },
+  dragonTurn: (dragonDamage) => {
+    const dragonDmg = dragonDamage();
+    dragon.damage = dragonDmg;
+    mage.healthPoints -= dragonDmg;
+    warrior.healthPoints -= dragonDmg;
+  },
+  finalTurns: () => {
+    return battleMembers;
+  },
+};
+gameActions.warriorTurn(warriorDamage);
+gameActions.mageTurn(mageDamage);
+gameActions.dragonTurn(dragonDamage);
+console.log(gameActions.finalTurns());
