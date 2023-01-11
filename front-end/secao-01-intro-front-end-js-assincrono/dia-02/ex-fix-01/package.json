@@ -5,5 +5,8 @@
   "dependencies": {
     "vite": "^4.0.4"
   },
+  "scripts": {
+    "dev": "vite --open"
+  },
   "type":"module"
 }

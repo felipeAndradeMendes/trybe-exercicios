@@ -15,7 +15,8 @@ const USERS_API = 'https://dummyjson.com/users';
 
 fetch (USERS_API)
 .then(response => response.json())
-.then(response => fillUsersSelect(response.users));
+.then(response => fillUsersSelect(response.users))
+.catch(error => fillErrorMessage(error));
 
 
 usersSelect.addEventListener('change', () => {
@@ -24,7 +25,11 @@ usersSelect.addEventListener('change', () => {
   
   fetch (`${USERS_POSTS_API}${userId}`)
   .then(response => response.json())
-  .then(response => fillPosts(response.posts));
+  // .then(response => fillPosts(response.posts));
+  .then(response => {
+    fillPosts(response.posts)
+  })
+  .catch(error => fillErrorMessage(error));
   // .then(response => console.log(response.posts));
 
 
@@ -34,7 +39,9 @@ usersSelect.addEventListener('change', () => {
   // .then(response => console.log(response.posts[0].id));
   .then(commentId => fetch (`https://dummyjson.com/posts/${commentId}/comments`))
   .then(response2 => response2.json())
-  .then(response2 => fillFeaturedPostComments(response2.comments));
+  .then(response2 => fillFeaturedPostComments(response2.comments))
+  .catch(error => fillErrorMessage(error));
+  ;
   // .then(response2 => console.log(response2.comments));
 
 
