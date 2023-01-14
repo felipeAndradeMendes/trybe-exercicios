@@ -13,15 +13,24 @@ const checkInputSelected = () => {
 
 const checkValidation = () => {
   const input = checkInputSelected();
-  console.log(optionSelected.value);
+  // console.log(optionSelected.value);
+  let result = '';
 
   if (input === 'email') {
-    const result = validator.isEmail(inputValue.value);
-    displayResult.innerHTML = `A validação retornou ${result}`;
+    result = validator.isEmail(inputValue.value);
   }
   if (input === 'cpf') {
-    const result = validator.isTaxID(inputValue.value, 'pt-BR');
-    displayResult.innerHTML = `A validação retornou ${result}`;
+    result = validator.isTaxID(inputValue.value, 'pt-BR');
   }
+  if (input === 'cartao') {
+    result = validator.isCreditCard(inputValue.value);
+  }
+  if (input === 'placa') {
+    result = validator.isLicensePlate(inputValue.value, 'pt-BR');
+  }
+  if (input === 'senha') {
+    result = validator.isStrongPassword(inputValue.value, { minLength: 8 });
+  }
+  displayResult.innerHTML = `A validação retornou ${result}`;
 };
 validateBtn.addEventListener('click', checkValidation);
