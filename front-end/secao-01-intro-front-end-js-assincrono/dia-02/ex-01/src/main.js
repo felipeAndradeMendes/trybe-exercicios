@@ -1,11 +1,29 @@
+import Swal from 'sweetalert2'
+
 const superHeroeImgContainer = document.querySelector('#img-container');
 const superHeroeName = document.querySelector('#display-name');
 const btnSearch = document.querySelector('#btn-sortear');
 
+// TEST IDs NOT PRESENT ON THE SUPERHEROE LIST
+const getPresentIds = async () => {
+  const resolve = await fetch('https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json');
+  const data = await resolve.json();
+  const idList = [];
 
+  data.forEach(heroe => {
+    idList.push(heroe.id);
+  });
+  return idList;
+};
+const idList = await getPresentIds();
+
+// Essa função garante que só chamara os ids que existem na list da API, mantendo a aleatoriedade;
 const generateRandomIdNumber = () => {
-  const randomNumber = Math.floor(Math.random() * 731) + 1;
-  return randomNumber;
+  const idListlength = idList.length;
+  const randomNumber = Math.floor(Math.random() * (idListlength - 1) + 1);
+  const randomId = idList[randomNumber];
+  console.log(randomId);
+  return randomId
 };
 
 const clearImg = () => {
@@ -36,7 +54,23 @@ const getHeroe = async () => {
   try {
     await implementElements();
   } catch(error) {
-    alert(`infelismente esse herói saiu de circulação...\nMsg técnica: ${error.message}`);
+    Swal.fire(
+      `Desculpe, o Servidor não retornou o heroi esperado...`,
+      `Tente novamente!`,
+      'question'
+    )
+    console.log(error.message);
   }; 
 }
 btnSearch.addEventListener('click', getHeroe);
+
+window.onload = () => {
+  getPresentIds();
+};
+
+// Gera id aleatório para busca super heroi;
+// Essa função nã garante que será chamado um ID existente;
+// const generateRandomIdNumber = () => {
+//   const randomNumber = Math.floor(Math.random() * 731) + 1;
+//       return randomNumber; 
+// };
