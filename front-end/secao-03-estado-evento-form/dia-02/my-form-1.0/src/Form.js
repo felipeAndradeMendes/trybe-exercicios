@@ -21,8 +21,9 @@ class Form extends React.Component {
   }
 
   handleChange({target}) {
-    const { name } = target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
+    console.log(target.checked)
+    const { name, type } = target;
+    const value = type === 'checkbox' ? target.checked : target.value;
     this.setState({
       [name]: value,
     })
