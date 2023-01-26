@@ -15,6 +15,7 @@ class Form extends React.Component {
     }
 
     this.handleChange = this.handleChange.bind(this)
+    this.handleFileUpload = this.handleFileUpload.bind(this);
   }
 
   handleChange({target}) {
@@ -23,6 +24,10 @@ class Form extends React.Component {
     this.setState({
       [name]: value,
     })
+  }
+
+  handleFileUpload({target}) {
+    console.log(target.files)
   }
 
   render() {
@@ -66,7 +71,8 @@ class Form extends React.Component {
         />
         <input 
           type="file"
-          value=""
+          name="arquivo"
+          value={this.state.arquivo}
           onChange={this.handleChange}
         />
 
