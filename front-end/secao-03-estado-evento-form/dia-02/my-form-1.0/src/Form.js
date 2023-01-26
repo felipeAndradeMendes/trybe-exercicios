@@ -1,4 +1,6 @@
 import React from 'react';
+import InputIdade from './InputIdade';
+import InputName from './InputName';
 
 class Form extends React.Component {
 
@@ -28,7 +30,7 @@ class Form extends React.Component {
 
   handleFileUpload({target}) {
     console.log(target.files)
-  }
+  } 
 
   render() {
     return(
@@ -41,23 +43,10 @@ class Form extends React.Component {
             <option>jambonápolis</option>
           </select>
         </label>
-        <label> Nome
-          <input 
-            type="text" 
-            name="nome" 
-            value={this.state.nome}
-            onChange={this.handleChange}
-          />
-        </label>
-        <label> Idade
-          <input 
-            type="number"
-            name="idade"
-            value={this.state.idade}
-            onChange={this.handleChange}
-          />
-        </label>
-        <textarea 
+        <InputName value={ this.state.nome } handleChange={ this.handleChange } />
+        <InputIdade value={ this.state.idade } handleChange={ this.handleChange } />
+        Escreva abaixo o que acha
+        <textarea
           name="desabafo"
           value={this.state.desabafo}
           onChange={this.handleChange}
