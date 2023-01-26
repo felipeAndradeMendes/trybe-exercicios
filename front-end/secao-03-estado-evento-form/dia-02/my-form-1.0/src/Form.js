@@ -6,19 +6,22 @@ class Form extends React.Component {
     super()
 
     this.state = {
-      opcoes: '',
+      lugarPreferido: '',
       nome: '',
       idade: 0,
       desabafo: '',
+      checkGostei: '',
+      arquivo: [],
     }
 
-    this.handleName = this.handleName.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
 
-  handleName(event) {
-    console.log(event.target.value)
+  handleChange({target}) {
+    const { name } = target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
     this.setState({
-      nome: event.target.value,
+      [name]: value,
     })
   }
 
@@ -26,30 +29,47 @@ class Form extends React.Component {
     return(
       <form className="form">
         <label> Escolha seu numero preferido
-          <select>
-            <option>01</option>
-            <option>02</option>
-            <option>03</option>
-            <option>04</option>
+          <select name="lugarPreferido" value={this.state.lugarPreferido} onChange={this.handleChange}>
+            <option>JumildaLand</option>
+            <option>Cocolandia</option>
+            <option>Jurubeba</option>
+            <option>jambonápolis</option>
           </select>
         </label>
         <label> Nome
           <input 
             type="text" 
             name="nome" 
-            // value={this.state.nome}
-            onChange={this.handleName}
+            value={this.state.nome}
+            onChange={this.handleChange}
           />
         </label>
         <label> Idade
           <input 
             type="number"
             name="idade"
+            value={this.state.idade}
+            onChange={this.handleChange}
           />
         </label>
         <textarea 
           name="desabafo"
+          value={this.state.desabafo}
+          onChange={this.handleChange}
         />
+        Gostei as perguntas
+        <input 
+          type="checkbox"
+          name="checkGostei"
+          value={this.state.checkGostei}
+          onChange={this.handleChange}
+        />
+        <input 
+          type="file"
+          value=""
+          onChange={this.handleChange}
+        />
+
       </form>
     );
   }
