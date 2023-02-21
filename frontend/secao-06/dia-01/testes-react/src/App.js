@@ -1,4 +1,4 @@
-// App.js
+// App.js ( EXERCICIO CONCLUIDO )
 import React, { Component } from 'react';
 import './App.css';
 import ValidEmail from './ValidEmail';
