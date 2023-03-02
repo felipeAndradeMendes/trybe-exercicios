@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App Trybe</title>
+    <script src="https://unpkg.com/redux@latest/dist/redux.js"></script>
+    <style>
+      body {
+        color: black;
+        background-color: #333;
+        font-family: sans-serif;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Minha Aplicação</h1>
+      <p>Status: Você está <span id="status">Offline</span></p>
+      <button id="toggle-theme">Light Mode</button>
+      <button id="toggle-status">Ficar Online</button>
+    </div>
+
+<!-- ******************************** -->
+
+    <script>
+      const INITIAL_STATE = {
+        status: 'offline',
+        theme: 'light',
+      };
+
+      const reducer = (state = INITIAL_STATE, action) => {
+        switch (action.type) {
+          case 'statusAction':
+            return {
+              ...state,
+              status: state.status === 'offline' ? 'online' : 'offline',
+            }
+            break;
+          case 'themeAction':
+            return {
+              ...state,
+              theme: state.theme === 'dark' ? 'light' : 'dark',
+            }
+            default: return state;
+        };
+      };
+
+      const store = Redux.createStore(reducer);
+
+      const themeButton = document.getElementById('toggle-theme');
+      const statusButton = document.getElementById('toggle-status');
+
+      themeButton.addEventListener('click', () => {
+        store.dispatch({ type: 'themeAction' });
+      });
+
+      statusButton.addEventListener('click', () => {
+        store.dispatch({ type: 'statusAction' });
+      });
+
+      store.subscribe(() => {
+        const { status, theme } = store.getState();
+
+        // THEME
+        const body = document.querySelector('body');
+        // body.style.backgroundColor = theme === 'light' ? 'white' : '#333';
+        // body.style.color = theme === 'light' ? 'black' : 'white';
+        // essa sintaxe acima ou essa abaixo:
+        (theme === 'light' )
+          ?  (body.style.backgroundColor =  '#333',
+              body.style.color = 'black',
+              themeButton.innerHTML = 'Light Mode')
+          :   
+          (body.style.backgroundColor =  'black',
+           body.style.color = 'white',
+           themeButton.innerHTML = 'Dark Mode')
+
+        // STATUS
+        const statusText = document.querySelector('#status');
+        statusText.innerHTML = status === 'online' ? 'Online' : 'Offline';
+        statusButton.innerHTML = status === 'offline' ? 'Ficar online' : 'Ficar offline'
+      })
+    </script>
+  </body>
+</html>
