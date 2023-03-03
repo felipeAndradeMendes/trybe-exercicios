@@ -4,7 +4,7 @@ import { actionCreator } from './redux/actions';
 
 class App extends React.Component {
   render() {
-    const { countState, dispatch } = this.props;
+    const { countState, clicksState, dispatch } = this.props;
     console.log(this.props)
     return (
       <div>
@@ -20,13 +20,17 @@ class App extends React.Component {
         >
           Incrementa 5
         </button>
+        <p>
+          { clicksState }
+        </p>
       </div>
     );
   }
 }
 
 const mapStateToProps = (state) => ({
-  countState: state.count,
+  countState: state.counterReducer.count,
+  clicksState:state.counterReducer.clicks,
 });
 
 export default connect(mapStateToProps)(App);
