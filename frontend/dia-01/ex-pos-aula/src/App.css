@@ -1,0 +1,7 @@
+.message-read {
+  color: #777;
+}
+
+.message-unread {
+  font-weight: bold;
+}
