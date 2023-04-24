@@ -13,7 +13,19 @@ services:
       - database__connection__database=ghost
     depends_on:
       - "db"
+    networks:
+      - my-network
   db:
     image: mysql:5.7.40
+    ports:
+      - 33060:3306
     environment:
       - MYSQL_ROOT_PASSWORD=password
+    volumes:
+      - ./db/dumps:/var/lib/mysql
+    networks:
+      - my-network
+
+networks:
+  my-network:
+  
