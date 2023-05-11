@@ -7,6 +7,7 @@ async function readFunc() {
   try {
     const data = await fs.readFile(path.resolve(__dirname, './movies.json'));
     const movies = JSON.parse(data);
+    
     console.log(movies);
     return movies;
   } catch (error) {

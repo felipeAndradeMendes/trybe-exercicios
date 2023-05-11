@@ -27,6 +27,15 @@ app.post('/movies', async (req, res) => {
     "movie": "Vingadores",
     "price": 5
   };
+
+  await writeFunc(newData);
+
+  res.status(200).json({ filme_adiconado: newData});
+
+});
+
+app.delete('/movie/;id', (req, res) => {
+  const { id } = req.params;
   
 });
 
