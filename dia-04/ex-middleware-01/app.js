@@ -1,6 +1,8 @@
 const express = require('express');
 const validateTeam = require('./validateTeam');
 const existingId = require('./existingId');
+const morgan = require('morgan');
+const cors = require('cors');
 
 const app = express();
 
@@ -11,16 +13,14 @@ const teams = [
 ];
 
 app.use(express.json());
-
-// MIDDLEWARES //
-
-
-
-// MIDDLEWARES //
+app.use('/fotos', express.static('./images'));
+app.use(morgan('dev'));
+app.use(cors());
 
 app.get('/teams', (req, res) => res.json(teams));
 
 app.get('/teams/:id', existingId, (req, res) => {
+  req.path = './images/brasao.png';
   const id = Number(req.params.id);
   const team = teams.find(t => t.id === id);
   res.status(200).json(team)

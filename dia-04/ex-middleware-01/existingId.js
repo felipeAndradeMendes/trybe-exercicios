@@ -8,7 +8,7 @@ const existingId = (req, res, next) => {
   if (teams.some((team) => team.id === id)) {
     return next();
   }
-  res.status(404).json({ "ERRO": 'O id informado não existe' });
+  res.status(404).json({ "ERRO": 'Time não encontrado' });
 };
 
 module.exports = existingId;
