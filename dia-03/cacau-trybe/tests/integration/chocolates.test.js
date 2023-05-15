@@ -7,7 +7,7 @@ const fs = require('fs');
 const { expect } = chai;
 chai.use(chaiHttp);
 
-const mockFile = JSON.stringify({ 
+const mockFile = JSON.stringify({
   brands: [
     {
       id: 1,
@@ -55,7 +55,6 @@ describe('Testando a API Cacau Trybe', function () {
   afterEach(() => {
     sinon.restore();
   });
-  
 
   describe('Usando o método GET em /chocolates', function () {
     it('Retorna a lista completa de chocolates!', async function () {
@@ -78,7 +77,7 @@ describe('Testando a API Cacau Trybe', function () {
         const response = await chai
           .request(app)
           .get('/chocolates/4');
-  
+
         expect(response.status).to.be.equal(200);
         expect(response.body.chocolate).to.deep.equal(
           {
@@ -88,14 +87,14 @@ describe('Testando a API Cacau Trybe', function () {
           });
       });
     });
-  
+
 
     describe('Usando o método GET em /chocolates/:id para buscar o ID 99', function () {
       it('Retorna status 404 com a mensagem "Chocolate not found"', async function () {
         const response = await chai
           .request(app)
           .get('/chocolates/99');
-  
+
         expect(response.status).to.be.equal(404);
         expect(response.body).to.deep.equal({ message: 'Chocolate not found' })
       });
@@ -106,7 +105,7 @@ describe('Testando a API Cacau Trybe', function () {
         const response = await chai
           .request(app)
           .get('/chocolates/brand/1');
-  
+
         expect(response.status).to.be.equal(200);
         expect(response.body.chocolates).to.deep.equal([
           {
@@ -123,12 +122,38 @@ describe('Testando a API Cacau Trybe', function () {
       });
     });
 
-    describe('usando metodo GET para buscar total de chocolates', function() {
-      it('Total deve ser 4', async function() {
+    describe('usando metodo GET para buscar total de chocolates', function () {
+      it('Total deve ser 4', async function () {
         const response = await chai.request(app).get('/chocolates/total');
 
         expect(response.status).to.be.equal(200);
         expect(response.body).to.deep.equal({ total_de_chocolates: 4 });
+      });
+    });
+
+    describe('Usando metodo GET para pesquisar chocolate pelo termo', function () {
+      it('a busca retorna chocolates corretos', async function () {
+        const response = await chai.request(app).get('/chocolates/search?name=Mo');
+
+        expect(response.status).to.be.equal(200);
+        expect(response.body).to.deep.equal({
+          "chocolate": [
+            {
+              "id": 3,
+              "name": "Mon Chéri",
+              "brandId": 2
+            },
+            {
+              "id": 4,
+              "name": "Mounds",
+              "brandId": 3
+            }
+          ]
+        })
+      });
+
+      it('A busca não retorna o chocolate pelo termo pesquisado', async function() {
+        const response = await chai.request(app).get('')
       });
     });
   });
