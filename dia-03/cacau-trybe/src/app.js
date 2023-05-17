@@ -38,6 +38,6 @@ app.get('/chocolates/search', async (req, res) => {
   res.status(!chocolate ? 404 : 200).json({ chocolate });
 });
 
-
+// termina exercicios at é ex 03 do bonus
 
 module.exports = app;
