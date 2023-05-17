@@ -29,3 +29,5 @@ calculaInterativo = () => {
 };
 
 calculaInterativo();
+
+// feito até o exercício 05
