@@ -23,20 +23,22 @@ app.get('/movies/:id', async (req, res) => {
 
 app.post('/movies', async (req, res) => {
   const movies = await readFunc();
-  const newData = {
-    "movie": "Vingadores",
-    "price": 5
+  const { movie, price } = req.body;
+  const newMovie = {
+    id: movies[movies.length - 1].id +1,
+    movie,
+    price,
   };
-
-  await writeFunc(newData);
-
-  res.status(200).json({ filme_adiconado: newData});
+  const allMovies = JSON.stringify([...movies, newMovie]);
+  await fs.writeFunc(movies)
 
 });
 
-app.delete('/movie/;id', (req, res) => {
+app.delete('/movie/:id', (req, res) => {
   const { id } = req.params;
   
 });
 
 module.exports = app;
+
+// feito até exercicio 07
