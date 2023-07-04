@@ -43,10 +43,17 @@ O pedido deve conter o cliente, os itens consumidos, a forma de pagamento (ex: â
 */
 
 class Cliente {
-  nome: string;
-
+  private _nome: string;
+  
   constructor(nome: string) {
-    this.nome = nome;
+    this._nome = nome;
+  }
+
+  public get nome(): string {
+    return this._nome;
+  }
+  public set nome(value: string) {
+    this._nome = value;
   }
 }
 
