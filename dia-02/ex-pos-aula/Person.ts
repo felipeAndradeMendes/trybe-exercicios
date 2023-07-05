@@ -1,12 +1,4 @@
 // // EX 01
-
-export default interface Employee {
-  registration: string;
-  salary: number;
-  admissionDate: Date;
-  generateRegistration(): string; 
-}
-
 export default class Person {
   private _name: string;
   private _birthDate: Date;
