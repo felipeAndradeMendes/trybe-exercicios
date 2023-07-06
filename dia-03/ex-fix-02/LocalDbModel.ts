@@ -1,6 +1,9 @@
+import {db, Character, Imodel} from './index'
+ 
+
 export default class LocalDbModel implements Imodel {
   create = async (character: Character) => {
-    const lastId = db.length > 0 ? db[db.length - 1].id;
+    const lastId = db.length > 0 ? db[db.length - 1].id: 0;
     const newCharacter = { id: lastId + 1, ...character };
     db.push(newCharacter);
     return newCharacter;
