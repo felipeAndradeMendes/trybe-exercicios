@@ -42,7 +42,8 @@ def bigger_name(names):
 
 
 print(
-    "Função 04:", bigger_name(["José", "Lucas", "Nádia", "Fernanda", "Cairo", "Joana"])
+    "Função 04:", bigger_name(
+        ["José", "Lucas", "Nádia", "Fernanda", "Cairo", "Joana"])
 )
 
 
@@ -60,7 +61,8 @@ print("Função 05:", calculate_paint(100))
 # exercicio 06
 def triangle_type(side1, side2, side3):
     is_triangle = (
-        side1 + side2 > side3 and side2 + side3 > side1 and side1 + side3 > side2
+        side1 + side2 > side3 and side2 + side3 > side1 and
+        side1 + side3 > side2
     )
     if not is_triangle:
         return "Não é um triangulo"
