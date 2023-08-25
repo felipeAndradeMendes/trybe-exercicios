@@ -24,13 +24,12 @@ class Estatistica:
             # print('NUM sECOND POS: ', numbers_sorted[second_pos_index])
 
             result = (
-                (numbers_sorted[first_pos_index] + numbers_sorted[second_pos_index]) / 2
-            )
+                numbers_sorted[first_pos_index] + numbers_sorted[second_pos_index]
+            ) / 2
             return result
-        
 
     def moda(self):
-        '''FALTA IMPLEMENTAR'''
+        """FALTA IMPLEMENTAR"""
         pass
 
 

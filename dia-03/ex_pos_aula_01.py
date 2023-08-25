@@ -111,27 +111,38 @@ class LinkedList:
                 position -= 1
         return value_to_be_returned
 
+    # def index_of(self, value):
+    #     index = 1
+    #     found_index = False
+    #     current_value = self.head_value
+    #     while not found_index:
+    #         if current_value.value == value:
+    #             found_index = True
+    #             return index
+    #         index += 1
+    #         current_value = current_value.next
+    #     return -1
+
     def index_of(self, value):
-        index = 1
-        found_index = False
+        position = 1
         current_value = self.head_value
-        while not found_index:
+        while current_value:
             if current_value.value == value:
-                found_index = True
-                return index
-            index += 1
+                return position
             current_value = current_value.next
+            position += 1
         return -1
 
-    # def index_of(self, value):
-    #     position = 1
-    #     current_value = self.head_value
-    #     while current_value:
-    #         if current_value.value == value:
-    #             return position
-    #         current_value = current_value.next
-    #         position += 1
-    #     return -1
+    # Exercicio bonus pos aula
+    def delete_duplicates(linked_list):
+        list_with_unique_elements = LinkedList()
+
+        while linked_list:
+            current_node = linked_list.remove_first()
+            if list_with_unique_elements.index_of(current_node.value) == -1:
+                list_with_unique_elements.insert_last(current_node.value)
+
+        return list_with_unique_elements
 
 
 # Para testar, apenas rode o arquivo com:
