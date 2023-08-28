@@ -1,6 +1,5 @@
 def calculate_presence(entradas, saidas, horario):
     count = 0
-    # index = 0
     for index in range(len(entradas)):
         if horario in range(entradas[index], saidas[index]):
             count += 1
