@@ -103,7 +103,10 @@ entregue_duas_listas = conj_lista1.intersection(conj_lista2)
 # falta_lista2 = conj_students.difference(conj_lista2)
 
 print("Quem já entregou pelo menos uma lista:", conj_lista1.union(conj_lista2))
-print("Quem não entregou nenhuma:", conj_students.difference(conj_lista1.union(conj_lista2)))
+print(
+    "Quem não entregou nenhuma:",
+    conj_students.difference(conj_lista1.union(conj_lista2)),
+)
 
 # 1
 print(falta_lista1)
