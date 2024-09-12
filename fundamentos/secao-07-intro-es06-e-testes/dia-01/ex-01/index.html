@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Calculadora</title>
+</head>
+<body>
+  <p>Informe dois números para realizar a soma:</p>
+  <label for='value1'>Valor 1:</label>
+  <input type='text' id='value1'>
+  <label for='value2'>Valor 2:</label>
+  <input type='text' id='value2'>
+  <button id='button'>Somar</button>
+  <p id='result'></p>
+
+
+  <script>
+
+    const isVazio = (value1, value2) => {
+      value1.trim();
+      value2.trim();
+      if (value1.trim().length === 0 || value2.trim().length === 0) {
+        throw new Error('Preencha dois valores');
+      }
+    };
+
+    const isNumero = (value1, value2) => {
+      const valor1 = value1.replace(',', '.');
+      const valor2 = value2.replace(',', '.');
+      // usa replace acima para cair em erro caso usuario use virgula em decimais;
+      if (isNaN(Number(valor1)) || isNaN(Number(valor2))) {
+        throw new Error('Preencha somente com valores numéricos');
+      }
+    };
+
+    function sum() {
+      const value1 = document.getElementById('value1').value;
+      const value2 = document.getElementById('value2').value;
+      const pResult = document.getElementById('result');
+      // usa replace para caso de o usuario usar vírgula para decimais;
+      let resultado = Number(value1.replace(',', '.')) + Number(value2.replace(',', '.'));
+      
+      try {
+        isVazio(value1, value2);
+        isNumero(value1, value2);
+        pResult.innerHTML = `Resultado = ${resultado}`;
+      } catch (error) {
+        pResult.innerHTML = error.message;
+      } finally {
+        document.getElementById('value1').value = '';
+        document.getElementById('value2').value = '';
+      }
+    }
+
+    window.onload = () => {
+      const button = document.getElementById('button');
+      button.addEventListener('click', sum);
+    }
+
+  </script>
+</body>
+</html>
