@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" type="text/css" href="./src/style.css"> -->
+  <title>VALIDADOR</title>
+</head>
+<body>
+  <main>
+    <h1>Validador de Campos</h1>
+    <div id="form-container">
+
+      <form action="">
+        <label for="input-string"></label>
+        <input type="text" id="input-string" placeholder="Insira aqui o valor">
+        <select name="tipo-de-valor" id="input-tipo-de-dado">
+          <option value="cpf">CPF</option>
+          <option value="email">E-mail</option>
+          <option value="cartao">Cartão de Crédito</option>
+          <option value="placa">Placa de automóvel</option>
+          <option value="senha">Senha forte?</option>
+
+        </select>
+      </form>
+      <button id="validate-btn">Validar</button>
+    </div>
+
+    <p id="display-result"></p>
+  </main>
+  <script src="./src/main.js" type="module"></script>
+</body>
+</html>
